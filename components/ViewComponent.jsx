@@ -4,6 +4,7 @@ var ViewComponent = React.createClass({
         console.log("widthChange fired");
 
        $('.rightDiv').toggleClass('expandRightDiv');
+        $('.expandImage').toggleClass('rotate180Deg');
 
 
     },

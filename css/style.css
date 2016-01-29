@@ -1,6 +1,6 @@
 
 #container{
-    background-color: #cccccc;
+    background-color: #e7e7e7;
 }
 
 /*Student view element*/
@@ -34,6 +34,10 @@
     height: 25px;
 }
 
+.expandImage:hover{
+  cursor: pointer;
+}
+
 .shadow {
     -webkit-box-shadow: -1px 2px 5px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: -1px 2px 5px 0px rgba(0,0,0,0.75);
@@ -50,6 +54,21 @@
 .expandRightDiv{
     position: absolute;
     width: 98%;
-    left: 40px;
+    left: 42px;
+}
 
+.rotate180Deg{
+    transform: rotate(180deg);
+}
+
+
+/*MenuComponent Styles*/
+.btn-default{
+    border:none;
+}
+.btn-default:hover{
+    background-color: green;
+    color:#ffffff;
+    z-index: 99999;
+    position: relative;
 }

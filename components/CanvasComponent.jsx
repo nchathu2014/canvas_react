@@ -5,7 +5,7 @@ var CanvasComponent = React.createClass({
             <div className="container-fluid canvasWrapper">
                 <div className="row">
 
-                    <div className="col-lg-3">
+                    <div className="col-lg-3 leftDiv">
                         <MenuComponent/>
                     </div>
 
