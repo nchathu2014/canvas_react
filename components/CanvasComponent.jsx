@@ -1,4 +1,8 @@
 var CanvasComponent = React.createClass({
+
+    popUpClose:function(){
+        $(".popUpModal").show().hide("slide", {direction: "right" }, 500 );
+    },
     render:function(){
         return(
 
@@ -11,9 +15,14 @@ var CanvasComponent = React.createClass({
 
                     <div className="col-lg-9 rightDiv">
                         <ViewComponent/>
-
                     </div>
                 </div>
+
+                {/*popup modal*/}
+                <div className="popUpModal">
+                    <button type="button" className="close pull-left"  onClick={this.popUpClose} data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+
             </div>
 
         );

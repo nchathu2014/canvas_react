@@ -1,12 +1,9 @@
 var ViewComponent = React.createClass({
 
     widthChange:function(){
-        console.log("widthChange fired");
-
-       $('.rightDiv').toggleClass('expandRightDiv');
-        $('.expandImage').toggleClass('rotate180Deg');
-
-
+       $('.rightDiv').toggleClass('expandRightDiv');//toggling the rightSide div width
+       $('.expandImage').toggleClass('rotate180Deg');//toggling view icon (0 to 180 deg)
+        $(".popUpModal").hide();
     },
 
     render:function(){

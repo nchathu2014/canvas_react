@@ -1,9 +1,9 @@
 var MenuComponent = React.createClass({
 
     widthChange:function(){
-        console.log("widthChange fires 1");
-        $('.rightDiv').removeClass('expandRightDiv');
-        $('.expandImage').removeClass('rotate180Deg')
+        $('.rightDiv').removeClass('expandRightDiv');//make the rightSide div to initial width
+        $('.expandImage').removeClass('rotate180Deg');//reset icon into initial state (0 deg)
+        $(".popUpModal").hide().show("slide", {direction: "right" }, 500 );
     },
 
     render:function(){

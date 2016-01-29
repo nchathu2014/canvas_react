@@ -72,3 +72,15 @@
     z-index: 99999;
     position: relative;
 }
+
+/*Popup Modal styles*/
+.popUpModal{
+    /* Refactor this EBP-CSS*/
+    height: 480px;background-color: #f2f2f2;position: absolute;top:0px;left: 55px;padding: 10px;z-index: 900;
+    display: none;
+    width: 430px;
+
+    -webkit-box-shadow: -1px 2px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 2px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: -1px 2px 5px 0px rgba(0,0,0,0.75);
+}
