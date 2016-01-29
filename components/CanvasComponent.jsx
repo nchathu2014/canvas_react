@@ -1,7 +1,7 @@
 var CanvasComponent = React.createClass({
 
     popUpClose:function(){
-        $(".popUpModal").show().hide("slide", {direction: "right" }, 500 );
+        $(".popUpModal").show().hide("slide", {direction: "right" }, 500 );//slide animated to popup dialog
     },
     render:function(){
         return(

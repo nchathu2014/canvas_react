@@ -1,9 +1,9 @@
 var ViewComponent = React.createClass({
 
-    widthChange:function(){
+    handleOnClick:function(){
        $('.rightDiv').toggleClass('expandRightDiv');//toggling the rightSide div width
        $('.expandImage').toggleClass('rotate180Deg');//toggling view icon (0 to 180 deg)
-        $(".popUpModal").hide();
+       $(".popUpModal").hide();//hide popup dialog when view arrow clicked
     },
 
     render:function(){
@@ -13,7 +13,7 @@ var ViewComponent = React.createClass({
                     <div className="view-title">
                       <span className="img-sep">
 
-                              <img src="img/icon-expand.svg"  className="expandImage" alt="expand icon" onClick={this.widthChange}/>
+                              <img src="img/icon-expand.svg"  className="expandImage" alt="expand icon" onClick={this.handleOnClick}/>
 
                       </span>
                         &nbsp;&nbsp;&nbsp;&nbsp;Student View
