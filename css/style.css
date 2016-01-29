@@ -1,3 +1,10 @@
+
+#container{
+    background-color: #cccccc;
+}
+
+/*Student view element*/
+
 .btn{
     border-radius: 0px;
     width: 100%;
@@ -7,11 +14,10 @@
 .space-divider{
     height: 3px;
 }
-
-/*Student view element*/
 .dash-line{
     border-bottom: 1px dashed #000000;
     padding: 10px;
+    background-color: #ffffff;
 }
 .dash-horizontal{
     border-right:1px dashed #000000;
@@ -32,4 +38,18 @@
     -webkit-box-shadow: -1px 2px 5px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: -1px 2px 5px 0px rgba(0,0,0,0.75);
     box-shadow: -1px 2px 5px 0px rgba(0,0,0,0.75);
+}
+
+.img-sep{
+    border-right: 1px dotted #cccccc;
+    padding: 13px 7px
+}
+
+/*Width Change Effects*/
+
+.expandRightDiv{
+    position: absolute;
+    width: 98%;
+    left: 40px;
+
 }
