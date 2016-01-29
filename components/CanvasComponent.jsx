@@ -6,7 +6,20 @@ var CanvasComponent = React.createClass({
     render:function(){
         return(
 
-            <div className="container-fluid canvasWrapper">
+            <div className="container-fluid">
+
+                <div className="row">
+
+                    <div className="col-lg-3">
+                        <h3>Build a Quiz/Poll</h3>
+                    </div>
+
+                    <div className="col-lg-9">
+                        <button type="button" className="btn btn-md btn-primary">Save as Draft</button>
+                        <button type="button" className="btn btn-md btn-primary">Publish</button>
+                    </div>
+                </div>
+
                 <div className="row">
 
                     <div className="col-lg-3 leftDiv">
