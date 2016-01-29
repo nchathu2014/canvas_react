@@ -1,2 +1,2 @@
-# canvas_react
-The canvas created using ReactJS
+# Canvas Component Using ReactJS
+Dev is in progress....basic componentization is done.
