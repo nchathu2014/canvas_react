@@ -3,22 +3,240 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
+    <script src="build/react.min.js"></script>
+    <script src="build/react-dom.min.js"></script>
+    <script src="js/babel-core-5.8.23.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
+
 </head>
 <body>
 <div id="container"></div>
 
-<script type="text/jsx" src="components/CanvasComponent.jsx"></script>
-<script type="text/jsx" src="components/MenuComponent.jsx"></script>
-<script type="text/jsx" src="components/ViewComponent.jsx"></script>
-<script type="text/jsx">
-    React.render(<CanvasComponent/>,document.getElementById('container'));
+<!-- <script type="text/babel" src="components/CanvasComponent.js"></script>
+<script type="text/babel" src="components/MenuComponent.js"></script>
+<script type="text/babel" src="components/ViewComponent.js"></script> -->
+<script type="text/babel">
+
+    var CanvasComponent = React.createClass({
+
+    popUpClose:function(){
+        $(".popUpModal").show().hide("slide", {direction: "right" }, 500 );//slide animated to popup dialog
+    },
+    render:function(){
+        return(
+
+            <div className="container-fluid">
+
+                <div className="row">
+
+                    <div className="col-lg-3">
+                        <h3>Build a Quiz/Poll</h3>
+                    </div>
+
+                    <div className="col-lg-7">
+                        <button type="button" className="btn btn-md btn-primary" style={{width:'auto'}}>Save as Draft
+                        </button>
+                        <span>&nbsp;</span>
+                        <button type="button" className="btn btn-md btn-primary" style={{width:'auto'}}>Publish
+                        </button>
+                    </div>
+                </div>
+
+                <div className="row">
+
+                    <div className="col-lg-3 leftDiv">
+                        <MenuComponent/>
+                    </div>
+
+                    <div className="col-lg-9 rightDiv">
+                        <ViewComponent/>
+                    </div>
+                </div>
+
+                {/*popup modal*/}
+                <div className="popUpModal">
+                    <button type="button" className="close pull-left"  onClick={this.popUpClose} data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+
+            </div>
+
+        );
+    }
+});
+
+
+var MenuComponent = React.createClass({
+
+
+    handleOnClick:function(){
+        $('.rightDiv').removeClass('expandRightDiv');//make the rightSide div to initial width
+        $('.expandImage').removeClass('rotate180Deg');//reset icon into initial state (0 deg)
+
+        $(".popUpModal").css("width",$('.menu-btn').width()+'px'); //make the popup window width relative to menu item width
+        $(".popUpModal").hide().show("slide", {direction: "right" }, 500 );//slide animated to popup dialog
+        $('.menu-span').addClass('glyphicon glyphicon-pencil');//change menu button icon when its clicked
+
+    },
+
+    render:function(){
+        return(
+         <div>
+             <h4 className="text-center">QUIZ/POLL DETAIL</h4>
+
+             <button className="btn btn-default menu-btn" onClick={this.handleOnClick}>
+                 <span className="glyphicon glyphicon-plus menu-span">&nbsp;</span>
+                 Title*
+             </button>
+             <div className="space-divider">&nbsp;</div>
+             <button className="btn btn-default  menu-btn">
+                 <span className="glyphicon glyphicon-plus">&nbsp;</span>
+                 Due Date*
+             </button>
+             <div className="space-divider">&nbsp;</div>
+             <button className="btn btn-default  menu-btn">
+                 <span className="glyphicon glyphicon-plus">&nbsp;</span>
+                 Learning Objectives
+             </button>
+             <div className="space-divider">&nbsp;</div>
+             <button className="btn btn-default  menu-btn">
+                 <span className="glyphicon glyphicon-plus">&nbsp;</span>
+                 Description
+             </button>
+
+             <h4 className="text-center">QUIZ/POLL ACTIVITY</h4>
+
+             <button className="btn btn-default  menu-btn">
+                 <span className="glyphicon glyphicon-plus">&nbsp;</span>
+                 Add Media
+             </button>
+             <div className="space-divider">&nbsp;</div>
+             <button className="btn btn-default  menu-btn">
+                 <span className="glyphicon glyphicon-plus">&nbsp;</span>
+                 Add Questions
+             </button>
+
+             <h4 className="text-center">SETTINGS</h4>
+
+             <button className="btn btn-default  menu-btn">
+                 <span className="glyphicon glyphicon-plus">&nbsp;</span>
+                 Grading Options
+             </button>
+             <div className="space-divider">&nbsp;</div>
+         </div>
+        );
+    }
+});
+
+var ViewComponent = React.createClass({
+
+    handleOnClick:function(){
+       $('.rightDiv').toggleClass('expandRightDiv');//toggling the rightSide div width
+       $('.expandImage').toggleClass('rotate180Deg');//toggling view icon (0 to 180 deg)
+       $(".popUpModal").hide();//hide popup dialog when view arrow clicked
+    },
+
+    render:function(){
+        return(
+            <div>
+                <div className="shadow">
+                    <div className="view-title">
+                      <span className="img-sep">
+
+                              <img src="img/icon-expand.svg"  className="expandImage" alt="expand icon" onClick={this.handleOnClick}/>
+
+                      </span>
+                        &nbsp;&nbsp;&nbsp;&nbsp;Student View
+                    </div>
+                    <div  className="dash-line">
+                        <div className="row">
+                            <div className="col-lg-8 dash-horizontal">
+                                <b>Title</b>
+                            </div>
+                            <div className="col-lg-4">
+                                <b> Date : </b>12/09/2015
+                            </div>
+                        </div>
+                    </div>
+                    <div  className="dash-line">
+                        <div className="row">
+                            <div className="col-lg-12">
+                                <b> Learning Objective :</b>
+                            </div>
+                        </div>
+                    </div>
+                    <div  className="dash-line">
+                        <div className="row">
+                            <div className="col-lg-12">
+                                <b>Description :</b>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="dynamicDiv">
+                        <div className="row">
+                            <div className="col-lg-6" id="kalturaWrapper">
+                                <KalturaPlayer player_id="32595032"
+                                   wid="1990241" /*_2027991*/
+                                   uiconf_id="32595032"
+                                   entry_id="0_rgvury8x"
+                                   pl_width="600"
+                                   pl_height="400">
+                                </KalturaPlayer>
+                            </div>
+                            <div className="col-lg-6" style={{backgroundColor:'#cccccc'}}>
+                                Question Area
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+});
+
+var href=null;
+    
+    var KalturaPlayer = React.createClass({
+
+        propTypes:{
+            player_id:React.PropTypes.string.isRequired,
+            wid:React.PropTypes.string.isRequired,
+            uiconf_id:React.PropTypes.number.isRequired,
+            entry_id:React.PropTypes.string.isRequired
+        },
+        getIntialState:function(){
+            return{
+                kPlayer:"off"
+            }
+        },
+        componentWillMount:function() {
+
+        href="http://www.kaltura.com/p/"+this.props.wid+"/sp/"+this.props.wid+"00/embedIframeJs/uiconf_id/"+this.props.uiconf_id+"/partner_id/"+this.props.wid+"?iframeembed=true&playerId="+this.props.player_id+"&entry_id="+this.props.entry_id;        
+        },
+        render:function(){
+            
+            return(
+                <div id="kalturaWrapper" ref="kp">
+                   <iframe src={href} width="400" height="330" allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder="0"></iframe>
+                </div>
+            );
+        },
+        componentDidMount:function(){
+            this.setState({
+                kPlayer:"on"
+            });
+        }
+    });
+
+    
+
+    ReactDOM.render(
+        <CanvasComponent/>,
+        document.getElementById('container')
+    );
 </script>
 
 

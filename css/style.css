@@ -6,7 +6,7 @@
 /*Student view element*/
 
 .btn{
-    border-radius: 0px;
+
     width: 100%;
     text-align: left;
 }
@@ -64,6 +64,7 @@
 
 /*MenuComponent Styles*/
 .menu-btn{
+    border-radius: 0px;
     border:none;
 }
 .menu-btn:hover{

@@ -44,8 +44,8 @@ var ViewComponent = React.createClass({
                     </div>
                     <div id="dynamicDiv">
                         <div className="row">
-                            <div className="col-lg-6">
-                                <iframe width="100%" height="380" src="https://www.youtube.com/embed/8HkVHbJZeWY" frameborder="0" allowfullscreen></iframe>
+                            <div className="col-lg-6" id="kalturaWrapper">
+
                             </div>
                             <div className="col-lg-6">
                                 Question Area
