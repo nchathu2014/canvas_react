@@ -1,16 +1,15 @@
-var MenuComponent = React.createClass({
+import React from 'react';
 
+var MenuComponent = React.createClass({
 
     handleOnClick:function(){
         $('.rightDiv').removeClass('expandRightDiv');//make the rightSide div to initial width
         $('.expandImage').removeClass('rotate180Deg');//reset icon into initial state (0 deg)
-
         $(".popUpModal").css("width",$('.menu-btn').width()+'px'); //make the popup window width relative to menu item width
         $(".popUpModal").hide().show("slide", {direction: "right" }, 500 );//slide animated to popup dialog
         $('.menu-span').addClass('glyphicon glyphicon-pencil');//change menu button icon when its clicked
 
     },
-
     render:function(){
         return(
          <div>
@@ -59,3 +58,5 @@ var MenuComponent = React.createClass({
         );
     }
 });
+
+export default MenuComponent
