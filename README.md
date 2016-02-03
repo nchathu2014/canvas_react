@@ -2,7 +2,7 @@
 - Canvas buildup using ReactJS
 
 # Prerequisite
-- You have to have a Node enviornoment
+- Node (^5) 
 
 # Run the project
 - npm install
