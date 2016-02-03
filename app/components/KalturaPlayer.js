@@ -16,8 +16,7 @@ import React from 'react';
             }
         },
         componentWillMount:function() {
-
-        href="http://www.kaltura.com/p/"+this.props.wid+"/sp/"+this.props.wid+"00/embedIframeJs/uiconf_id/"+this.props.uiconf_id+"/partner_id/"+this.props.wid+"?iframeembed=true&playerId="+this.props.player_id+"&entry_id="+this.props.entry_id;        
+            href="http://www.kaltura.com/p/"+this.props.wid+"/sp/"+this.props.wid+"00/embedIframeJs/uiconf_id/"+this.props.uiconf_id+"/partner_id/"+this.props.wid+"?iframeembed=true&playerId="+this.props.player_id+"&entry_id="+this.props.entry_id;        
         },
         render:function(){
             
