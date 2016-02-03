@@ -9,4 +9,3 @@
 - bower install
 - "webpack -w" to run the server
 - view the public/index.html file 
-
