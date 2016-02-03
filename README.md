@@ -1,11 +1,12 @@
-# react-starter-kit
-webpack appraoch to create a react project - starter kit
+# React Canvas
+- Canvas buildup using ReactJS
 
-#Dependencies
-- npm init
-- npm install --save react
-- npm install --save react-dom
+# Prerequisite
+- You have to have a Node enviornoment
 
+# Run the project
+- npm install
+- bower install
+- "webpack -w" to run the server
+- view the public/index.html file 
 
-#Dev Dependencies
-- npm install --save-dev babel-core@6.3.13 babel-loader@6.2.0 babel-preset-es2015@6.3.13 babel-preset-react@6.3.13
